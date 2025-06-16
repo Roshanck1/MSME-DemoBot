@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MSME Assist Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <h2>MSME Assist Chatbot</h2>
+        <form action="/chat" method="post">
+            <textarea name="user_input" placeholder="Ask me anything about loans, procurement, UDYAM registration..." required></textarea>
+            <button type="submit">Send</button>
+        </form>
+
+        {% if user_input %}
+        <div class="chat-box">
+            <p><strong>You:</strong> {{ user_input }}</p>
+            <p><strong>Bot:</strong> {{ bot_response }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
